@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Stundenplan</title>
+</head>
+<body>
+    <h1>Stundenplan fürs 4. Semester KMMB</h1>
+    <output>Heute ist kein Tag</output>
+
+    <div id="wrapper">
+
+        <div class="times">Zeiten</div>
+        <div>8:00 - 8:45</div>
+        <div>8:45 - 9:30</div>
+        <div>9:50 - 10:35</div>
+        <div>10:35 - 11:20</div>
+        <div>11:30 - 12:15</div>
+        <div>12:15 - 13:00</div>
+        <div id="middag"></div>
+        <div id="nachmittag">14:00 -  14:45</div>
+        <div>14:45 - 15:30</div>
+        <div>15:40 - 16:25</div>
+        <div>16:25 - 17:10</div>
+        <div>17:20 - 18:05</div>
+        <div>18:05 - 18:50</div>
+
+
+
+        <div class="monday day">Montag</div>
+        
+        
+
+
+        <div class="tuesday day">Dienstag</div>
+        <div class="tuesday span-2"title="Schwarz, AM109" >Technik 6</div>
+        <div class="tuesday span-2">Informations-management 1</div>
+        <div class="tuesday span-2">Medienproduktion</div>
+        <div class="tuesday span-2">Informations-management 2</div>
+        <div class="tuesday span-2">Vorbereitung Praxissemester</div>
+        
+
+        <div class="wednesday day">Mittwoch</div>
+        <div class="wednesday earlylate">Einführung wiss. Arbeiten</div>
+        <div class="wednesday termi">Terminologie-wissenschaft</div>
+        <div class="wednesday span-2">Technik 5</div>
+    
+
+
+        <div class="thursday day">Donnerstag</div>
+        <div class="thursday extrawurst">Technik- und Medienrecht</div>
+        <div class="thursday span-3">Terminologie-Man. Projekt</div>
+        <div class="thursday ua">User Assistance</div>
+
+
+        <div class="friday day">Freitag</div>
+        <div class="friday termiFriday">Terminologie-Man. Projekt</div>
+        <div class="friday listeningComp">Praxisnachbereitung-Visit</div>
+
+
+    </div>
+</body>
+
+<script>
+    window.onload = function(){
+        let out =  document.querySelector("output");
+        const weekday = ["Sonntag","Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag"];
+
+        const d = new Date();
+        let day = weekday[d.getDay()];
+        out.innerText = "Heute ist " + day;
+
+        //let today glow
+        let weekdayClasses = [".sunday", ".monday", ".tuesday", ".wednesday", ".thursday", ".friday", ".saturday"];
+        let daySelector = weekdayClasses[d.getDay()];
+
+        let today = document.querySelectorAll(daySelector);
+        for(let i = 0; i < today.length; i++){
+            today[i].classList.add("today");
+        }
+
+    }
+
+
+
+</script>
+</html>

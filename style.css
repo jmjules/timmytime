@@ -12,9 +12,11 @@
 }
 
 body{
+    margin: 0;
+    padding: 0;
     font-family: sans-serif;
     /* font-size: 1.1rem; */
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
     background: var(--bg-color);
     color: var(--dark-color);
@@ -35,7 +37,7 @@ output{
     color: var(--text-color);
     background: var(--wrapper-color);
     width: 80%;
-    height: 80vh;
+    min-height: 80vh;
     padding: 1rem;
     display: grid;
 
@@ -47,21 +49,60 @@ output{
 }
 #wrapper > *{
     border: 2px solid var(--dark-color);
+    border-radius: .5rem;
     padding: .3rem;
 }
 
+.dropdown{
+    display:none;
+}
 
 .today{
-    border: 1px solid var(--text-color);
+    /* border: transparent; doesnt seem to work */
     background: var(--highlight-color);
 }
 
 
 
 
+@media only screen and (max-width: 600px) {
+
+    body{
+        padding-top: 3rem;
+        overflow: scroll;
+        
+    }
+    #wrapper{
+        flex: auto;
+        width: 100%;
+        grid-template-columns: 1fr 2fr;
+    }
+
+
+    .monday, .tuesday, .wednesday, .thursday, .friday{
+        display: none;
+    }
+    .today{
+        display: hidden;
+    }
+    .middag{
+        grid-column: span 2;
+    }
+    
+    .dropdown{
+        display: block;
+        position: relative;
+    }
+
+}
+
+
+
 
 
 /* Hier ist Alignment shit für die Fächer*/
+
+
 .day{
     grid-row: 1;
 }
@@ -72,8 +113,10 @@ output{
     grid-row: span 3;
 }
 
-#middag{
-    grid-column: span 6;
+@media only screen and (min-width: 600px) {
+    .middag{
+        grid-column: span 6;
+    }
 }
 
 .earlylate{
@@ -100,3 +143,19 @@ output{
     grid-row: 9/span 4;
     border: 1px dashed;
 }
+
+
+/* -----------------Grid Stuff end----------------- */
+
+
+
+/* -------------dropdown day----------------------- */
+.dropdown{
+    position: relative;
+}
+.selectDay{
+    cursor: pointer;
+}
+
+.block{display: block;}
+

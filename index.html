@@ -9,7 +9,20 @@
 </head>
 <body>
     <h1>Stundenplan fürs 4. Semester KMMB</h1>
-    <output>Heute ist kein Tag</output>
+
+    
+    
+    <div class="dropdown">
+        <label for="daySelectTag">Ausgewählter Tag: </label>
+        <select class="selectDay" name="weekdays" id="daySelectTag" onchange="dropTheDays()">
+            <option value=".monday">Montag</option>
+            <option value=".tuesday">Dienstag</option>
+            <option value=".wednesday">Mittwoch</option>
+            <option value=".thursday">Donnerstag</option>
+            <option value=".friday">Freitag</option>
+        </select>
+    </div>
+        
 
     <div id="wrapper">
 
@@ -20,7 +33,7 @@
         <div>10:35 - 11:20</div>
         <div>11:30 - 12:15</div>
         <div>12:15 - 13:00</div>
-        <div id="middag"></div>
+        <div class="middag"></div>
         <div id="nachmittag">14:00 -  14:45</div>
         <div>14:45 - 15:30</div>
         <div>15:40 - 16:25</div>
@@ -66,24 +79,40 @@
 
 <script>
     window.onload = function(){
-        let out =  document.querySelector("output");
-        const weekday = ["Sonntag","Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag"];
-
-        const d = new Date();
-        let day = weekday[d.getDay()];
-        out.innerText = "Heute ist " + day;
-
-        //let today glow
         let weekdayClasses = [".sunday", ".monday", ".tuesday", ".wednesday", ".thursday", ".friday", ".saturday"];
-        let daySelector = weekdayClasses[d.getDay()];
+        const d = new Date();
+        let daySelector = ".tuesday";//weekdayClasses[d.getDay()]; //just for testing
+        let todaysInput = "option[value='" + daySelector + "']";
+        let today = document.querySelectorAll(daySelector);//all elements of the current day
 
-        let today = document.querySelectorAll(daySelector);
+        //change input field
+        document.querySelector(todaysInput).setAttribute("selected", "");
+
+        //let today *glow*
         for(let i = 0; i < today.length; i++){
             today[i].classList.add("today");
+            today[i].classList.add("block");
         }
 
     }
 
+    function dropTheDays(){
+
+        let oldElems = document.querySelectorAll(".block");
+        for(let i = 0; i < oldElems.length; i++){
+            oldElems[i].classList.toggle("block");
+        }
+        
+        
+        let newValue = document.getElementById("daySelectTag").value;
+        let newDisplayElems = document.querySelectorAll(newValue);
+
+        for(let i = 0; i < newDisplayElems.length; i++){
+            newDisplayElems[i].classList.add("block");
+        }
+
+
+    }
 
 
 </script>

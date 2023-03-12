@@ -37,9 +37,10 @@ output{
     color: var(--text-color);
     background: var(--wrapper-color);
     width: 80%;
-    min-height: 80vh;
+    min-height: 60vh;
     padding: 1rem;
     display: grid;
+    border-radius: 1rem;
 
     grid-auto-flow: column;
     grid-template-rows: repeat(14, 1fr);
@@ -51,6 +52,7 @@ output{
     border: 2px solid var(--dark-color);
     border-radius: .5rem;
     padding: .3rem;
+    padding-bottom: 0;
 }
 
 .dropdown{
@@ -62,6 +64,13 @@ output{
     background: var(--highlight-color);
 }
 
+
+
+div p{
+    font-size: small;
+    line-height: 1;
+    filter:opacity(80%);
+}
 
 
 
@@ -76,6 +85,7 @@ output{
         flex: auto;
         width: 100%;
         grid-template-columns: 1fr 2fr;
+        height: 80%
     }
 
 
@@ -124,7 +134,7 @@ output{
 }
 
 .termi{
-    grid-row: 9/span 3;
+    grid-row: 9/span 4;
 }
 
 .extrawurst{

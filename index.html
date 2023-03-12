@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -49,29 +49,66 @@
 
 
         <div class="tuesday day">Dienstag</div>
-        <div class="tuesday span-2"title="Schwarz, AM109" >Technik 6</div>
-        <div class="tuesday span-2">Informations-management 1</div>
-        <div class="tuesday span-2">Medienproduktion</div>
-        <div class="tuesday span-2">Informations-management 2</div>
-        <div class="tuesday span-2">Vorbereitung Praxissemester</div>
+        <div class="tuesday span-2">Technik 6
+            <p>Schwarz, AM109</p>
+            <p>Social Media > Energietechnik</p>
+        </div>
+        <div class="tuesday span-2">Informations-management 1
+            <p>Ziegler, AM126</p>
+        </div>
+        <div class="tuesday span-2">Medienproduktion
+            <p>Rothfuß, AM301</p>
+        </div>
+        <div class="tuesday span-2">Informations-management 2
+            <p>Ziegler, AM109</p>
+        </div>
+        <div class="tuesday span-2">Vorbereitung Praxissemester
+            <p>Muthig, AM126</p>
+        </div>
         
 
-        <div class="wednesday day">Mittwoch</div>
-        <div class="wednesday earlylate">Einführung wiss. Arbeiten</div>
-        <div class="wednesday termi">Terminologie-wissenschaft</div>
-        <div class="wednesday span-2">Technik 5</div>
+        <div class="wednesday day">Mittwoch  
+        </div>
+        <div class="wednesday earlylate">Einführung wiss. Arbeiten
+            <p>Schillinger, AM126</p>
+            <p>entfällt: 03.05., 17.05. <br/> dafür: 26.06. bis 13 Uhr</p>
+        </div>
+        <div class="wednesday termi">Terminologie-wissenschaft
+            <p>Drewer, AM126 (301)</p>
+            <p>genaue Termine werden erst in der Veranstaltung bekannt gegeben.</p>
+            <br>
+            <div class="wednesday">(Technik 5)
+                <p>Start: 10.05.23</p>
+            </div>
+        </div>
+        
     
 
 
         <div class="thursday day">Donnerstag</div>
-        <div class="thursday extrawurst">Technik- und Medienrecht</div>
-        <div class="thursday span-3">Terminologie-Man. Projekt</div>
-        <div class="thursday ua">User Assistance</div>
+        <div class="thursday extrawurst">Technik- und Medienrecht
+            <p>Arfmann/Kümmerle, AM126</p>
+        </div>
+        <div class="thursday span-3">Terminologie-Man. Projekt
+            <p>Drewer, AM301/126</p>
+        </div>
+        <div class="thursday ua">User Assistance (hybrid)
+            <p>Präsenz: 14-18:50 AM126/111</p>
+            <p>Online: 15:40-18:50 Uhr</p>
+            <p>Start: 16.03.23, Präsenz </p>
+        </div>
 
 
         <div class="friday day">Freitag</div>
-        <div class="friday termiFriday">Terminologie-Man. Projekt</div>
-        <div class="friday listeningComp">Praxisnachbereitung-Visit</div>
+        <div class="friday termiFriday">Terminologie-Man. Projekt
+            <p>Drewer, AM301/308</p>
+        </div>
+        <div class="friday listeningComp">Praxisnachbereitung-Visit/<br>Projektbesprechungen Termi.
+            <p>Praxisnachbereitung Termine:<br>
+            Drewer: Fr, 17.03. 9:50-13, AM126<br>
+            Muthig: Fr, 24.03. 9:50-13, <a href="https://h-ka-de.zoom.us/my/muthig">online</a><br>
+            Ziegler: Di, 04.04. 17:20-20:30, <a href="https://h-ka-de.zoom.us/my/meeting.ziegler">hybrid?</a></p>
+        </div>
 
 
     </div>
@@ -81,7 +118,7 @@
     window.onload = function(){
         let weekdayClasses = [".sunday", ".monday", ".tuesday", ".wednesday", ".thursday", ".friday", ".saturday"];
         const d = new Date();
-        let daySelector = ".tuesday";//weekdayClasses[d.getDay()]; //just for testing
+        let daySelector = ".friday";//weekdayClasses[d.getDay()]; //just for testing
         let todaysInput = "option[value='" + daySelector + "']";
         let today = document.querySelectorAll(daySelector);//all elements of the current day
 

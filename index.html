@@ -74,7 +74,7 @@
 
 
         <div class="thursday day">Donnerstag</div>
-        <div class="thursday extrawurst">Technik- und Medienrecht
+        <div class="thursday extrawurst">Technik- und Medienrecht <i class="red">9 Uhr</i>
             <p>Arfmann/Kümmerle, AM126</p>
         </div>
         <div class="thursday span-3">Terminologie-Man. Projekt
@@ -132,6 +132,7 @@
 
         //change input field
         document.querySelector(todaysInput).setAttribute("selected", "");
+        daySelectMenu.value = dayTracker;
 
         //let today *glow*
         for(let i = 0; i < today.length; i++){

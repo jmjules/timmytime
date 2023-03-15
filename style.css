@@ -237,6 +237,7 @@ option:hover{
 .block{
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
     
 }
 
@@ -266,3 +267,4 @@ option:hover{
 .blueish{
     background: rgb(28, 130, 224);
 }
+

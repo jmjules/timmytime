@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="atschii.css">
+    <title>Stundenplan</title>
+</head>
+<body>
+    <h1>Stundenplan</h1>    
+    
+        
+
+    <div class="wrapper">
+
+        <div class="timewrap">
+            <div class="times">Zeiten</div>
+            <div>8:00 - 8:45</div>
+            <div>8:45 - 9:30</div>
+            <div>9:50 - 10:35</div>
+            <div>10:35 - 11:20</div>
+            <div>11:30 - 12:15</div>
+            <div>12:15 - 13:00</div>
+            <div class="middag"></div>
+            <div>14:00 -  14:45</div>
+            <div>14:45 - 15:30</div>
+            <div>15:40 - 16:25</div>
+            <div>16:25 - 17:10</div>
+            <div>17:20 - 18:05</div>
+            <div>18:05 - 18:50</div>
+        </div>
+
+
+        <span class="monday day">Montag</span>
+        <div class="monday elfdrei">Baumanagement 2
+            <p>501/503</p>
+        </div>
+        <div class="monday span-2">Baumanagement 2
+            <p>501/503</p>
+        </div>
+        
+
+
+        <div class="tuesday day">Dienstag</div>
+        
+        
+
+        <div class="wednesday day">Mittwoch</div>
+        <div class="wednesday span-2">Entwurfstheorie
+            <p>Foyer</p>
+        </div>
+        <div class="wednesday span-2">Stegreif+Präsentation
+            <p>507B</p>
+        </div>
+        
+    
+
+
+        <div class="thursday day">Donnerstag</div>
+        <div class="thursday elfdrei">Tragwerksentwurf
+            <p>509A/Foyer</p>
+        </div>
+        <div class="thursday span-2">Bachelorarbeit
+            <p>Burgstaller/Möller</p>
+            <p>501/509A/Foyer</p>
+        </div>
+        <div class="thursday span-2">Bachelorarbeit
+            <p>Ginter/Schneider</p>
+            <p>501/509A/Foyer</p>
+        </div>
+        <div class="thursday span-2">ArchKomm
+            <p>501/509A/Foyer</p>
+        </div>
+        
+
+
+        <div class="friday day">Freitag</div>
+        <div class="friday termiFriday">Terminologie-Man. Projekt
+            <p>Drewer, AM301/308</p>
+            <p>eig nur 14.04.</p>
+        </div>
+        <div class="friday listeningComp">Projektbesprechungen Termi.</div>
+
+
+    </div>
+
+
+    <div class="dropdown">
+        <!-- <label for="daySelectMenu">Ausgewählter Tag: </label> -->
+        <div class="backward button" onclick="windTheTime('backwards')"></div>
+        <select class="selectDay" name="weekdays" id="daySelectMenu" onchange="dropTheDays()">
+            <option value="1">Montag</option>
+            <option value="2">Dienstag</option>
+            <option value="3">Mittwoch</option>
+            <option value="4">Donnerstag</option>
+            <option value="5">Freitag</option>
+        </select>
+        <div class="forward button" onclick="windTheTime('forwards')"></div>
+    </div>
+</body>
+
+<script>
+    const d = new Date();
+    const WEEKDAYS = [".sunday", ".monday", ".tuesday", ".wednesday", ".thursday", ".friday", ".saturday"];
+    let dayTracker;
+    let daySelectMenu = document.getElementById("daySelectMenu");
+
+    window.onload = function(){
+        let daySelector = d.getDay(); //for testing put: "3";
+        let todaysInput = "option[value='" + daySelector + "']";
+        let today = document.querySelectorAll(WEEKDAYS[daySelector]);//all elements of the current day
+
+        //update dayTracker with current day
+        dayTracker = daySelector;
+
+        //change input field
+        //document.querySelector(todaysInput).setAttribute("selected", ""); //idk if this even works
+        daySelectMenu.value = dayTracker;
+
+        //let today *glow*
+        for(let i = 0; i < today.length; i++){
+            today[i].classList.add("today");
+            today[i].classList.add("block");
+        }
+
+    }
+
+    function dropTheDays(){
+
+        let oldElems = document.querySelectorAll(".block");
+        for(let i = 0; i < oldElems.length; i++){
+            oldElems[i].classList.toggle("block");
+        }
+        
+        
+        let newValue = WEEKDAYS[daySelectMenu.value];
+        let newDisplayElems = document.querySelectorAll(newValue);
+
+        for(let i = 0; i < newDisplayElems.length; i++){
+            newDisplayElems[i].classList.add("block");
+        }
+
+
+    }
+
+    function windTheTime(direction){
+
+        if(direction === "backwards"){
+            if(dayTracker > 1){
+                dayTracker--;
+            }else{
+                dayTracker = 5;
+            }
+        }else if(direction === "forwards"){
+            if(dayTracker < 5){
+                dayTracker++;
+            }else{
+                dayTracker = 1;
+            }
+        }
+
+        
+        daySelectMenu.value = dayTracker;
+        dropTheDays();
+    }
+</script>
+</html>

@@ -1,0 +1,16 @@
+:root{
+    --main-color: #6f5da2;
+    --secondary-color: #F4FBF6;
+    --accent-color:#3f0a6b;
+
+    --highlight-color: 0px 0px 90px 43px rgba(115,57,163,0.63);;
+    --gradient: linear-gradient(45deg, rgb(130, 34, 194), rgb(29, 17, 133), rgb(12, 21, 150));
+    --transparent-color: invert(10%);
+    --border-today: hsl(0, 100%, 79%);
+}
+
+
+.elfdrei{
+    grid-row: 6/span 2;
+}
+

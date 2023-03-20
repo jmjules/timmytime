@@ -19,7 +19,7 @@ body{
     padding: 0;
     font-family: sans-serif;
     font-weight: 600;
-    min-height: 100vh;
+    min-height: 100dvh;
     /* overflow: hidden; */
     color: var(--secondary-color);
     background-image: var(--gradient);

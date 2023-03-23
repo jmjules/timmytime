@@ -97,7 +97,7 @@ div p{
     .wrapper{
         width: 100%;
         grid-template-columns: 1fr 2fr;
-        height: 85vh;
+        height: 85dvh;
     }
 
 
@@ -107,6 +107,12 @@ div p{
     .today{
         display: none;
     }
+
+.day.today::after{
+    margin-left: .3em;
+    content: "(heute)";
+}
+
     .middag{
         grid-column: span 2;
         background: transparent;
@@ -134,10 +140,6 @@ div p{
 .day.today{
 
     flex-direction: row;
-}
-.day.today::after{
-    margin-left: .3em;
-    content: "(heute)";
 }
 @media only screen and (min-width: 600px) {
     .day{

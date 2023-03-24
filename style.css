@@ -63,7 +63,7 @@ body{
     border-radius: .5rem;
     padding: .3rem;
     padding-bottom: 0;
-    /* overflow: hidden; */
+    overflow-y: scroll;
 }
 
 .dropdown{
@@ -131,9 +131,9 @@ div p{
 
 /* Hier ist Alignment shit für die Fächer*/
 
-.overflow{
+/* .overflow{
     overflow-y: scroll;
-}
+} */
 .day{
     grid-row: 1;
     align-items: center;

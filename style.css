@@ -44,7 +44,7 @@ body{
 
 .wrapper{
     color: var(--secondary-color);
-    width: 80vw;
+    width: minmax(2rem, 80vw);/*idk hierfür brauch ich noch was besseres, ... clamp?*/
     height: 80vh;
     padding: 1rem;
     display: grid;

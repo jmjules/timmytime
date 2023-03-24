@@ -22,6 +22,7 @@ body{
     min-height: 100dvh;
     /* overflow: hidden; */
     color: var(--secondary-color);
+    background: var(--accent-color);
     background-image: var(--gradient);
     background-size: 300%;
     animation: bruh 15s infinite alternate;

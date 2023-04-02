@@ -66,9 +66,6 @@ body{
     overflow-y: scroll;
 }
 
-.dropdown{
-    display:none;
-}
 
 .today{
     border: 3px solid var(--border-today);
@@ -108,17 +105,17 @@ div p{
         display: none;
     }
 
-.day.today::after{
-    margin-left: .3em;
-    content: "(heute)";
-}
+    .day.today::after{
+        margin-left: .3em;
+        content: "(heute)";
+    }
 
     .middag{
         grid-column: span 2;
         background: transparent;
     }
     
-    .dropdown{
+    .daySelect__menu{
         display: block;
         position: relative;
     }
@@ -207,11 +204,11 @@ div p{
 
 /* -------------day selection----------------------- */
 
-.dropdown{
+.daySelect__menu{
     background: var(--accent-color);
     box-shadow:  0px 1px 5px #332d2d81;
     width: 80%;
-    padding: 1rem;
+    padding: .5rem;
     margin-bottom: 1rem;
     border-radius: .5rem;
 
@@ -220,26 +217,19 @@ div p{
     font-size: 1.3rem;
 }
 @media only screen and (min-width: 600px) {
-    .dropdown{
+    .daySelect__menu{
         display: none;
     }
 }
-.selectDay{
-    cursor: pointer;
-    color: var(--secondary-color);
-    font-size: 1.3rem;
-    background: transparent;
-    border: none;
-    text-align: center;
-    text-align: -webkit-center;
 
+.button{
+    cursor: pointer;
+    width: 3rem;
+    aspect-ratio: 1;
+    border-radius: 1rem;
+    border: none;
 }
-option{
-    background: var(--accent-color);
-}
-option:hover{
-    background: green;
-}
+
 
 .block{
     display: flex;
@@ -252,15 +242,6 @@ option:hover{
 }
 
 
-.backward, .forward{
-    cursor: pointer;
-    clip-path: polygon(100% 0, 0 50%, 100% 100%);
-    background: white;
-    width: 1rem;
-}
-.forward{
-    transform: rotate(180deg);
-}
 
 
 

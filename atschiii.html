@@ -83,83 +83,14 @@
     </div>
 
 
-    <div class="dropdown">
-        <!-- <label for="daySelectMenu">Ausgewählter Tag: </label> -->
-        <div class="backward button" onclick="windTheTime('backwards')"></div>
-        <select class="selectDay" name="weekdays" id="daySelectMenu" onchange="dropTheDays()">
-            <option value="1">Montag</option>
-            <option value="2">Dienstag</option>
-            <option value="3">Mittwoch</option>
-            <option value="4">Donnerstag</option>
-            <option value="5">Freitag</option>
-        </select>
-        <div class="forward button" onclick="windTheTime('forwards')"></div>
+    <div class="daySelect__menu">
+        <button class="button" value="" onclick="dropTheDays(1)">Mo</button>
+        <button class="button" value="" onclick="dropTheDays(2)">Di</button>
+        <button class="button" value="" onclick="dropTheDays(3)">Mi</button>
+        <button class="button" value="" onclick="dropTheDays(4)">Do</button>
+        <button class="button" value="" onclick="dropTheDays(5)">Fr</button>
     </div>
+    <script src="script.js" defer></script>
 </body>
 
-<script>
-    const d = new Date();
-    const WEEKDAYS = [".sunday", ".monday", ".tuesday", ".wednesday", ".thursday", ".friday", ".saturday"];
-    let dayTracker;
-    let daySelectMenu = document.getElementById("daySelectMenu");
-
-    window.onload = function(){
-        let daySelector = d.getDay(); //for testing put: "3";
-        let todaysInput = "option[value='" + daySelector + "']";
-        let today = document.querySelectorAll(WEEKDAYS[daySelector]);//all elements of the current day
-
-        //update dayTracker with current day
-        dayTracker = daySelector;
-
-        //change input field
-        //document.querySelector(todaysInput).setAttribute("selected", ""); //idk if this even works
-        daySelectMenu.value = dayTracker;
-
-        //let today *glow*
-        for(let i = 0; i < today.length; i++){
-            today[i].classList.add("today");
-            today[i].classList.add("block");
-        }
-
-    }
-
-    function dropTheDays(){
-
-        let oldElems = document.querySelectorAll(".block");
-        for(let i = 0; i < oldElems.length; i++){
-            oldElems[i].classList.toggle("block");
-        }
-        
-        
-        let newValue = WEEKDAYS[daySelectMenu.value];
-        let newDisplayElems = document.querySelectorAll(newValue);
-
-        for(let i = 0; i < newDisplayElems.length; i++){
-            newDisplayElems[i].classList.add("block");
-        }
-
-
-    }
-
-    function windTheTime(direction){
-
-        if(direction === "backwards"){
-            if(dayTracker > 1){
-                dayTracker--;
-            }else{
-                dayTracker = 5;
-            }
-        }else if(direction === "forwards"){
-            if(dayTracker < 5){
-                dayTracker++;
-            }else{
-                dayTracker = 1;
-            }
-        }
-
-        
-        daySelectMenu.value = dayTracker;
-        dropTheDays();
-    }
-</script>
 </html>

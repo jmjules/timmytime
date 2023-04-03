@@ -11,10 +11,10 @@ window.onload = function () {
     //update dayTracker with current day
     dayTracker = daySelector;
 
-    //change input field
-    //document.querySelector(todaysInput).setAttribute("selected", ""); //idk if this even works
-    //gibts ned mehr
-    // daySelectMenu.value = dayTracker;
+    //preselect todays button
+    let todaysButton = document.querySelector("#d" + daySelector);
+    todaysButton.classList.toggle("button_clicked")
+    todaysButton.classList.toggle("button_today")
 
     //let today *glow*
     for (let i = 0; i < today.length; i++) {
@@ -39,6 +39,13 @@ function dropTheDays(buttonValue) {
         newDisplayElems[i].classList.add("block");
     }
 
+
+    let oldClickedButton = document.querySelector(".button_clicked");
+     oldClickedButton ? oldClickedButton.classList.toggle("button_clicked") : null;
+    
+    let clickedButton = document.querySelector("#d" + buttonValue);
+    clickedButton.classList.toggle("button_clicked")
+    
 
 }
 

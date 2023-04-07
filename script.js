@@ -3,7 +3,10 @@ const WEEKDAYS = [".sunday", ".monday", ".tuesday", ".wednesday", ".thursday", "
 let dayTracker;
 let daySelectMenu = document.getElementById("daySelectMenu");
 
+
+
 window.onload = function () {
+
     let daySelector = d.getDay(); //for testing put: "3";
     // let todaysInput = "option[value='" + daySelector + "']";
     let today = document.querySelectorAll(WEEKDAYS[daySelector]);//all elements of the current day
@@ -22,6 +25,40 @@ window.onload = function () {
         today[i].classList.add("block");
     }
 
+
+    updateTime();
+
+}
+
+function updateTime() {
+
+    let currentTime = d.getHours() + d.getMinutes() / 60; //to test put time in decimal format
+    let timePercentage = (currentTime - 8) / 10.8;
+    console.log(currentTime);
+    console.log(timePercentage);
+
+    let tableElem = document.querySelector(".wrapper");
+    let tableDimensions = tableElem.getBoundingClientRect();
+    let styles = getComputedStyle(tableElem);
+    let elemHeight = tableDimensions.height - parseInt(styles.paddingBlock);
+
+    let tableY = tableDimensions.y;          //minimum
+    let displayHeight = elemHeight + parseInt(styles.paddingTop);   //maximum
+    let line = document.querySelector(".timeLine");
+    let offset;
+
+    if(currentTime < 8){
+        offset = 0 + parseInt(styles.paddingTop) + elemHeight/14;
+    }else if(currentTime > 18.8){
+        offset = elemHeight;
+    }else{
+        offset = timePercentage * elemHeight + parseInt(styles.paddingTop);
+    }
+
+    line.style.top = tableY + offset + "px";
+    console.log(tableDimensions);
+    console.log(displayHeight);
+    console.log(elemHeight);
 }
 
 function dropTheDays(buttonValue) {

@@ -20,3 +20,8 @@ body{
     grid-row: 6/span 2;
 }
 
+@media only screen and (max-width: 600px){
+    .elfdrei{
+        grid-row: 5/span 2;
+    }
+}

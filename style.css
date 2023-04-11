@@ -4,7 +4,7 @@
     --accent-color:#0a6b6b;
 
     --highlight-color: 0px 0px 90px 43px rgba(115,57,163,0.63);;
-    --gradient: linear-gradient(45deg, rgb(34, 194, 56), rgb(17, 133, 133), rgb(6, 92, 126));
+    --gradient: linear-gradient(45deg, rgb(27, 189, 48), rgb(21, 151, 119), rgb(10, 100, 136));
     --transparent-color: invert(10%);
     --border-today: hsl(98, 100%, 79%);
 }
@@ -61,8 +61,8 @@ body{
     /* grid-auto-rows: max-content; */
 }
 .wrapper > *{
-    border: 2px solid var(--secondary-color);
-    /* background: #596182; */
+    /* border: 1px solid var(--secondary-color); */
+    background: var(--accent-color);
     backdrop-filter: var(--transparent-color);
     -webkit-backdrop-filter: var(--transparent-color);
     border-radius: .5rem;
@@ -73,7 +73,7 @@ body{
 
 
 .today{
-    border: 3px solid var(--border-today);
+    border: 2px solid var(--border-today);
     /* box-shadow: var(--highlight-color); */
     display: flex;
     flex-direction: row;
@@ -162,9 +162,9 @@ div p{
 }
 .timewrap > *{
     font-weight: 600;
-    background: var(--secondary-color);
+    background: var(--accent-color);
     border-radius: .5rem;
-    color: var(--main-color);
+    color: var(--primary-color);
     display: grid;
     justify-content: center;
     align-content: center;
@@ -284,6 +284,7 @@ div p{
 
 /* -----------------------timeLine thingie---------------------- */
 .timeLine{
+    display: none;
     position: absolute;
     width: 100%;
     margin: 0;
@@ -296,8 +297,8 @@ div p{
 
 /* --------------final color shit--------------------- */
 .middag{
-    background-color: transparent;
-    border: solid 1.5px var(--secondary-color);
+    background-color: var(--accent-color);
+    /* border: solid 1.5px var(--secondary-color); */
     backdrop-filter: invert(20%);
 }
 

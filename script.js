@@ -33,32 +33,17 @@ window.onload = function () {
 function updateTime() {
 
     let currentTime = d.getHours() + d.getMinutes() / 60; //to test put time in decimal format
-    let timePercentage = (currentTime - 8) / 10.8;
-    console.log(currentTime);
-    console.log(timePercentage);
+    let timeSlots = [8.75, 9.5, 10.6, 11.34, 12.25, 13, 14.75, 15.5, 16.42, 17.17, 18.084, 18.84];
 
-    let tableElem = document.querySelector(".wrapper");
-    let tableDimensions = tableElem.getBoundingClientRect();
-    let styles = getComputedStyle(tableElem);
-    let elemHeight = tableDimensions.height - parseInt(styles.paddingBlock);
+    for (let n = 0; n < timeSlots.length; n++) {
+        if (currentTime <= timeSlots[n] && currentTime >= 8) {
+            let timebox = document.querySelector("#t" + n);
 
-    let tableY = tableDimensions.y;          //minimum
-    let displayHeight = elemHeight + parseInt(styles.paddingTop);   //maximum
-    let line = document.querySelector(".timeLine");
-    let offset;
-
-    if(currentTime < 8){
-        offset = 0 + parseInt(styles.paddingTop) + elemHeight/14;
-    }else if(currentTime > 18.8){
-        offset = elemHeight;
-    }else{
-        offset = timePercentage * elemHeight + parseInt(styles.paddingTop);
+            timebox.classList.toggle("currentTime");
+            return;
+        }
+        
     }
-
-    line.style.top = tableY + offset + "px";
-    console.log(tableDimensions);
-    console.log(displayHeight);
-    console.log(elemHeight);
 }
 
 function dropTheDays(buttonValue) {

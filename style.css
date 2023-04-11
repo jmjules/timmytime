@@ -3,10 +3,11 @@
     --secondary-color: #F4FBF6;
     --accent-color:#0a6b6b;
 
-    --highlight-color: 0px 0px 90px 43px rgba(115,57,163,0.63);;
+    --highlight-color: 5px 5px 20px rgba(115,57,163,0.63);;
     --gradient: linear-gradient(45deg, rgb(27, 189, 48), rgb(21, 151, 119), rgb(10, 100, 136));
     --transparent-color: invert(10%);
-    --border-today: hsl(98, 100%, 79%);
+    /* --border-today: hsl(98, 100%, 79%); failsave */
+    --border-today: hsl(98, 37%, 52%);
 }
 
 
@@ -27,10 +28,10 @@ body{
     min-height: 100dvh;
     /* overflow: hidden; */
     color: var(--secondary-color);
-    background: var(--accent-color);
-    background-image: var(--gradient);
+    background: rgb(22, 155, 126);
+    /* background-image: var(--gradient);
     background-size: 300%;
-    animation: bruh 15s infinite alternate;
+    animation: bruh 15s infinite alternate; */
     
     display: flex;
     flex-direction: column;
@@ -66,17 +67,18 @@ body{
     backdrop-filter: var(--transparent-color);
     -webkit-backdrop-filter: var(--transparent-color);
     border-radius: .5rem;
-    padding: .3rem;
+    padding: 1rem .7rem;
     padding-bottom: 0;
     overflow-y: scroll;
 }
 
 
 .today{
+    /* color: white; */
+    /* background: var(--border-today); */
     border: 2px solid var(--border-today);
     /* box-shadow: var(--highlight-color); */
     display: flex;
-    flex-direction: row;
 }
 .today.termiFriday,
 .today.listeningComp{
@@ -162,6 +164,7 @@ div p{
 }
 .timewrap > *{
     font-weight: 600;
+    font-size: .9rem;
     background: var(--accent-color);
     border-radius: .5rem;
     color: var(--primary-color);
@@ -200,12 +203,12 @@ div p{
 
 .termiFriday{
     grid-row: 4/span 4;
-    border: 1px dashed;
+    border: 4px dashed rgb(22, 155, 126);
 }
 
 .listeningComp{
     grid-row: 9/span 4;
-    border: 1px dashed;
+    border: 4px dashed rgb(22, 155, 126);
 }
 
 
@@ -282,15 +285,10 @@ div p{
     overflow: hidden;
 }
 
-/* -----------------------timeLine thingie---------------------- */
-.timeLine{
-    display: none;
-    position: absolute;
-    width: 100%;
-    margin: 0;
-    border: none;
-    border-top: 7px solid rgba(255, 0, 0, 0.315);
-    top: 50px;
+/* -----------------------current time thingie---------------------- */
+.currentTime{
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.651);
+    color: rgb(213, 219, 217);
 }
 
 
@@ -309,3 +307,43 @@ div p{
     background: rgb(28, 130, 224);
 }
 
+
+
+/* --------hide first grid row on mobile----------- */
+
+@media only screen and (max-width: 600px) {
+    .times, .day{
+        display: none;
+    }
+    .wrapper{
+        padding-top: 2rem;
+        padding-bottom: .5rem;
+        grid-template-rows: repeat(13, 1fr);
+    }
+    
+    /* die rutschen dann alle eins nach "oben" */
+    .earlylate{
+        grid-row: 3/span 2;
+    }
+    
+    .termi{
+        grid-row: 8/span 4;
+    }
+    
+    .extrawurst{
+        grid-row: 2/span 2
+    }
+    
+    .ua{
+        grid-row: 8/span 6;
+    }
+    
+    .termiFriday{
+        grid-row: 3/span 4;
+    }
+    
+    .listeningComp{
+        grid-row: 8/span 4;
+    }
+}
+    

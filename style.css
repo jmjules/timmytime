@@ -19,6 +19,13 @@ h1{
     display: none;
 }
 
+a:any-link{
+    color: var(--border-today);
+}
+a:hover{
+    color: greenyellow;
+}
+
 body{
     position: relative;
     margin: 0;
@@ -67,9 +74,10 @@ body{
     backdrop-filter: var(--transparent-color);
     -webkit-backdrop-filter: var(--transparent-color);
     border-radius: .5rem;
-    padding: 1rem .7rem;
+    padding-top: .5rem;
+    padding-inline: .7rem;
     padding-bottom: 0;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 
@@ -80,11 +88,11 @@ body{
     /* box-shadow: var(--highlight-color); */
     display: flex;
 }
-.today.termiFriday,
+/* .today.termiFriday,
 .today.listeningComp{
     border: 3px dotted var(--border-today);
 
-}
+} */
 
 div p{
     margin: 0;
@@ -93,6 +101,11 @@ div p{
     font-weight: 500;
     filter: opacity(85%);
 }
+
+.student-lessons{
+    color: #00fd48;
+}
+
 
 
 
@@ -141,9 +154,7 @@ div p{
 
 /* Hier ist Alignment shit für die Fächer*/
 
-/* .overflow{
-    overflow-y: scroll;
-} */
+
 .day{
     grid-row: 1;
     align-items: center;
@@ -202,7 +213,7 @@ div p{
 }
 
 .termiFriday{
-    grid-row: 4/span 4;
+    grid-row: 4/span 3;
     /* border: 4px dashed rgb(22, 155, 126); */
 }
 
@@ -278,7 +289,7 @@ div p{
 .block{
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
+    overflow-y: auto;
     
 }
 .day{
@@ -339,7 +350,7 @@ div p{
     }
     
     .termiFriday{
-        grid-row: 3/span 4;
+        grid-row: 3/span 3;
     }
     
     .listeningComp{

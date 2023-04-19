@@ -7,7 +7,7 @@ let daySelectMenu = document.getElementById("daySelectMenu");
 
 window.onload = function () {
 
-    let daySelector = d.getDay(); //for testing put: "3";
+    let daySelector = 4;//d.getDay(); //for testing put: "3" = wednesday;
     // let todaysInput = "option[value='" + daySelector + "']";
     let today = document.querySelectorAll(WEEKDAYS[daySelector]);//all elements of the current day
 
@@ -69,25 +69,6 @@ function dropTheDays(buttonValue) {
     clickedButton.classList.toggle("button_clicked")
     
 
-}
+    updateTime();
 
-function windTheTime(direction) {
-
-    if (direction === "backwards") {
-        if (dayTracker > 1) {
-            dayTracker--;
-        } else {
-            dayTracker = 5;
-        }
-    } else if (direction === "forwards") {
-        if (dayTracker < 5) {
-            dayTracker++;
-        } else {
-            dayTracker = 1;
-        }
-    }
-
-
-    daySelectMenu.value = dayTracker;
-    dropTheDays();
 }

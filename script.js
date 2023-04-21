@@ -7,7 +7,7 @@ let daySelectMenu = document.getElementById("daySelectMenu");
 
 window.onload = function () {
 
-    let daySelector = 4;//d.getDay(); //for testing put: "3" = wednesday;
+    let daySelector = d.getDay(); //for testing put: "3" = wednesday;
     // let todaysInput = "option[value='" + daySelector + "']";
     let today = document.querySelectorAll(WEEKDAYS[daySelector]);//all elements of the current day
 

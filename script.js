@@ -37,9 +37,13 @@ function updateTime() {
 
     for (let n = 0; n < timeSlots.length; n++) {
         if (currentTime <= timeSlots[n] && currentTime >= 8) {
-            let timebox = document.querySelector("#t" + n);
+            let old = document.querySelector(".currentTime");
+            if (old) {
+                old.classList.remove(".currentTime");
+            }
 
-            timebox.classList.toggle("currentTime");
+            let timebox = document.querySelector("#t" + n);
+            timebox.classList.add("currentTime");
             return;
         }
         

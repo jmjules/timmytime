@@ -358,3 +358,65 @@ div p{
     }
 }
     
+
+
+
+/* ---------------hier was zu Prüfungen----------------- */
+.prf-title{
+    margin: auto;
+    display: block;
+}
+
+.link-button{
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    z-index: 2;
+    
+    height: 2rem;
+    padding: 1rem;
+    line-height: 0;
+    text-decoration: none;
+
+    color: var(--accent-color);
+    background: var(--secondary-color);
+    border: 3px solid var(--accent-color);
+    border-radius: .7rem;
+}
+.lowerpls{
+    top: 4rem
+}
+
+.prfwoche{
+    background: var(--main-color);
+    padding-block: 1rem;
+    margin-top: 3rem;
+    padding-left: 1rem;
+}
+.prf-entry{
+    display: flex;
+    gap: 2rem;
+
+    padding-left: 2rem;
+    margin-inline-start: 1rem;
+    border-radius: 0 0 1rem 1rem;
+    background: var(--accent-color);
+}
+.prf-entry div{
+    filter: opacity(93%);
+}
+.button-show-wdh{
+    cursor: pointer;
+    margin: auto ;
+    line-height: 0;
+    padding: 1rem;
+
+    color: var(--secondary-color);
+    background: var(--main-color);
+    border: 3px solid var(--accent-color);
+    border-radius: .7rem;
+
+}
+.show-wdh{
+    display: none;
+}

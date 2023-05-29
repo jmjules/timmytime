@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="icon" href="icon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="iphone-app-60pt@3x.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Prüfungen</title>
+</head>
+<body>
+    <h1 class="prf-title">Prüfungen</h1>
+
+    <a class="link-button lowerpls" href="index.html">Stundenplan</a>
+
+    <div class="container">
+        <div class="prfwoche">1. Prüfungswoche (03.07.-07.07.2023)</div>
+        <div class="prf-entry show-wdh">
+            <span class="prf-weekday">Mo <br> 03.07.2023</span>
+            <div>KMMB4351 Angew. Sprawi. <br> 2 Drewer <br> 11:30-13:00 Uhr</div>
+        </div>
+        <br class="show-wdh">
+        <div class="prf-entry">
+            <span class="prf-weekday">Mi <br> 05.07.2023</span>
+            <div>KMMB4441 Terminologiewiss. <br> Drewer <br> 09:00-10:30 Uhr </div>
+        </div>
+        
+
+        
+        <div class="prfwoche">2. Prüfungswoche (10.07.-14.07.2023)</div>
+        <div class="prf-entry">
+            <span class="prf-weekday">Mo <br> 10.07.2023</span>
+            <div>KMMB4421 Info. Management 1 <br> Ziegler <br> 09:30-11:00 Uhr</div>
+        </div>
+        <br>
+        <div class="prf-entry">
+            <span class="prf-weekday">Mi <br> 12.07.2023</span>
+            <div>KMMB4432 Technik- und Medienrecht <br> Arfmann/Kümmerle <br> 09:00-10:30 Uhr</div>
+        </div>
+        <br class="show-wdh">
+        <div class="prf-entry show-wdh">
+            <span class="prf-weekday">Fr <br> 12.07.2023</span>
+            <div>KMMB4311 Informationstechnik 1 <br> Rausch <br>  09:30-11:00 Uhr </div>
+        </div>
+        
+
+        
+        <div class="prfwoche">3. Prüfungswoche (17.07.-21.07.2023)</div>
+        <div class="prf-entry">
+            <span class="prf-weekday">Mo <br> 17.07.2023</span>
+            <div>KMMB4452 Technik 6 <br> Schwarz <br> 11:30-12:30 Uhr </div>
+        </div>
+        <br>
+        <div class="prf-entry">
+            <span class="prf-weekday">Mi <br> 19.07.2023</span>
+            <div>KMMB4411  User Assistance, VL <br> Hirn <br> 15:00-16:30 Uhr</div>
+        </div>
+    </div>
+
+
+    <div class="button-show-wdh" onclick="toggleWdh()">Wdh. ausm 3. anzeigen</div>
+</body>
+
+<script defer>
+    function toggleWdh() {
+        let wdhStuff = document.querySelectorAll(".show-wdh");
+        wdhStuff.forEach(element => {
+            if (element.style.display === "none"){
+                element.style.display = "flex";
+            } else {
+                element.style.display = "none";
+            }
+        });
+    }
+</script>
+</html>

@@ -362,10 +362,6 @@ div p{
 
 
 /* ---------------hier was zu Prüfungen----------------- */
-.prf-title{
-    margin: auto;
-    display: block;
-}
 
 .link-button{
     position: absolute;
@@ -408,6 +404,7 @@ div p{
 .button-show-wdh{
     cursor: pointer;
     margin: auto ;
+    margin-bottom: 3rem;
     line-height: 0;
     padding: 1rem;
 

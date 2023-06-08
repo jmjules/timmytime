@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    
+    <link rel="manifest" href="manifest.json">
 
     <link rel="icon" href="icon.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="iphone-app-60pt@3x.png">
@@ -67,10 +69,10 @@
     function toggleWdh() {
         let wdhStuff = document.querySelectorAll(".show-wdh");
         wdhStuff.forEach(element => {
-            if (element.style.display === "none"){
-                element.style.display = "flex";
-            } else {
+            if (element.style.display === "flex"){
                 element.style.display = "none";
+            } else {
+                element.style.display = "flex";
             }
         });
     }

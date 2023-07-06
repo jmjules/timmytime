@@ -417,3 +417,11 @@ div p{
 .show-wdh{
     display: none;
 }
+
+.smol{
+    font-weight: 400;
+}
+
+.done{
+    text-decoration: line-through;
+}
